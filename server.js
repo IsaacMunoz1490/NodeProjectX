@@ -1,5 +1,5 @@
 const express = require('express');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 // static pages were added using path and fs modules.
 
 
@@ -8,7 +8,7 @@ const hostname = 'localhost';
 const port = 4000;
 
 const app = express();
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use((req, res) => {
     console.log(req.headers);
