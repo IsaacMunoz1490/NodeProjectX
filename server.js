@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const bottomsRouter = require('./routes/bottomsRouter');
 // static pages were added using path and fs modules.
 
 
@@ -10,6 +11,10 @@ const port = 4000;
 
 const app = express();
 app.use(morgan('dev')); //middleware for logging
+app.use(express.json());
+
+// bring in Models
+app.use('/bottoms', bottomsRouter);
 
 app.use(express.static(__dirname + '/public')); //absolute path where the files are in
 
