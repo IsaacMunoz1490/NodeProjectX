@@ -1,6 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
 const bottomsRouter = require('./routes/bottomsRouter');
+const hatsRouter = require('./routes/hatsRouter');
+const shoesRouter = require('./routes/shoesRouter');
+const topsRouter = require('./routes/topsRouter');
 // static pages were added using path and fs modules.
 
 
@@ -13,8 +16,11 @@ const app = express();
 app.use(morgan('dev')); //middleware for logging
 app.use(express.json());
 
-// bring in Models
+// bring in Routers
 app.use('/bottoms', bottomsRouter);
+app.use('/hats', hatsRouter);
+app.use('/shoes', shoesRouter);
+app.use('/tops', topsRouter);
 
 app.use(express.static(__dirname + '/public')); //absolute path where the files are in
 
